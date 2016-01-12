@@ -1,5 +1,9 @@
 package edu.upenn.cis455.xpathengine;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
@@ -11,11 +15,22 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  */
 public class XPathEngineFactory {
-	public static XPathEngine getXPathEngine() {
-		return new XPathEngineImpl();
+	
+	private static DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	
+	public static XPathEngine getXPathEngine() throws ParserConfigurationException {
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		XPathEngineImpl rval = new XPathEngineImpl();
+		rval.setDocumentBuilder(builder);
+		return rval;
 	}
 	
 	public static DefaultHandler getSAXHandler() {
 		return null;
+	}
+	
+	public static void main(String args[]) throws ParserConfigurationException{
+		XPathEngine engine= XPathEngineFactory.getXPathEngine();
+		
 	}
 }

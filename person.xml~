@@ -1,0 +1,14 @@
+<person name="steve">
+	<head>
+	</head>
+	<head>
+		<eyes/>
+		<eyes name="left"/>
+		<nose/>
+		<mouth/>
+	</head>
+	<body>
+		<arms/>
+		<chest>big</chest>
+	</body>
+</person>

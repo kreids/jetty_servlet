@@ -10,6 +10,15 @@ public class RunAllTests extends TestCase
   {
     try {
       Class[]  testClasses = {
+    	Class.forName("edu.upenn.cis455.servlet.HttpClientTest"),
+    	Class.forName("edu.upenn.cis455.servlet.XPathServletTest"),
+    	Class.forName("edu.upenn.cis455.storage.DBWrapperTest"),
+    	Class.forName("edu.upenn.cis455.storage.DBWrapperTest2"),
+    	Class.forName("edu.upenn.cis455.xpathengine.AttXPathEngineImplTest"),
+    	Class.forName("edu.upenn.cis455.xpathengine.BasicXPathEngineImplTest"),
+    	Class.forName("edu.upenn.cis455.xpathengine.ContainsXPathEngineImplTest"),
+    	Class.forName("edu.upenn.cis455.xpathengine.EqualsXPathEngineImplTest")
+    	
         /* TODO: Add the names of your unit test classes here */
         // Class.forName("your.class.name.here") 
       };   

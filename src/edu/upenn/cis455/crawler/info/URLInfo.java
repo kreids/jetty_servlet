@@ -4,21 +4,58 @@ public class URLInfo {
 	private String hostName;
 	private int portNo;
 	private String filePath;
+	private boolean isHttps = false;
+	private boolean hasWWW = false;
 	
 	/**
 	 * Constructor called with raw URL as input - parses URL to obtain host name and file path
 	 */
+	
+	public static void main(String[] args){
+		URLInfo inf = new URLInfo("https://dbappserv.cis.upenn.edu/crawltest.html");
+		System.out.println(inf.getFullURL());
+	}
+	public String getFullURL(){
+		StringBuffer urlBuff = new StringBuffer();
+		if(isHttps){
+			urlBuff.append("https://");
+		}
+		else{
+			urlBuff.append("http://");
+		}
+		if(hasWWW)
+			urlBuff.append("www.");
+		
+		urlBuff.append(hostName);
+		urlBuff.append(filePath);
+		//System.out.println(urlBuff.toString());
+		return urlBuff.toString();
+	}
+	public boolean hasWWW(){
+		return hasWWW;
+	}
+	public boolean isHttps(){
+		return isHttps;
+	}
 	public URLInfo(String docURL){
 		if(docURL == null || docURL.equals(""))
 			return;
 		docURL = docURL.trim();
-		if(!docURL.startsWith("http://") || docURL.length() < 8)
+		if(docURL.startsWith("https://")){
+			isHttps=true;
+			docURL = docURL.substring(8);
+		}
+		else if(!docURL.startsWith("http://") || docURL.length() < 8){
 			return;
+		}
 		// Stripping off 'http://'
-		docURL = docURL.substring(7);
-		/*If starting with 'www.' , stripping that off too
-		if(docURL.startsWith("www."))
-			docURL = docURL.substring(4);*/
+		else
+			docURL = docURL.substring(7);
+		//If starting with 'www.' , stripping that off too
+		if(docURL.startsWith("www.")){
+			hasWWW = true;
+			docURL = docURL.substring(4);
+			}
 		int i = 0;
 		while(i < docURL.length()){
 			char c = docURL.charAt(i);

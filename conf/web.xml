@@ -22,5 +22,62 @@
    </servlet-mapping>  
 
    <!-- add any additional servlets and servlet mappings here -->
+   <servlet>
+     <servlet-name>deletechan</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.DeleteChan</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>deletechan</servlet-name>
+     <url-pattern>/DeleteChan</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+     <servlet-name>dispchan</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.DispChan</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>dispchan</servlet-name>
+     <url-pattern>/DispChan</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>createchan</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.CreateChan</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>createchan</servlet-name>
+     <url-pattern>/CreateChan</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>listchan</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.ListChan</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>listchan</servlet-name>
+     <url-pattern>/LiarChan</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>login</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.Login</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>login</servlet-name>
+     <url-pattern>/Login</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>logout</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.Logout</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>logout</servlet-name>
+     <url-pattern>/LogOut</url-pattern>
+   </servlet-mapping>
+<servlet>
+     <servlet-name>newaccount</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.NewAccount</servlet-class> 
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>newaccount</servlet-name>
+     <url-pattern>/NewAccount</url-pattern>
+   </servlet-mapping>
 
 </web-app>

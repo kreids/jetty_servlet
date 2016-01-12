@@ -1,0 +1,8 @@
+<html>
+<body>
+<a href="/LogIn">Log in</a><br>
+<a href="/LogOut">Log out</a><br>
+<a href="/CreateChan">New Channel</a><br>
+<a href="/ListChan">List of Channels</a>
+</body>
+</html>
